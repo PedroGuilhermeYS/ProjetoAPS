@@ -15,11 +15,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("\n=== Menu ===");
+            System.out.println("\n&&&& Menu &&&&");
             System.out.println("1 - Cadastrar Cliente");
             System.out.println("2 - Cadastrar Produto");
             System.out.println("3 - Criar Pedido");
-            System.out.println("4 - Sair");
+            System.out.println("4 - Relatorios");
+            System.out.println("5 - Sair");
             System.out.print("Escolha: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
@@ -35,10 +36,11 @@ public class Main {
                     criarPedido(scanner);
                     break;
                 case 4:
+                    relatorio(scanner);
+                    break;
+                case 5:
                     System.out.println("Saindo");
                     return;
-				case 17:
-					System.out.println("Bolsonaro é Norte, Bolsaronaro é Nodeste, Vai 17! Vai 17!");
                 default:
                     System.out.println("Não tem opção");
             }
@@ -52,7 +54,9 @@ public class Main {
         String cpf = scanner.nextLine();
         System.out.print("Email: ");
         String email = scanner.nextLine();
-        clientes.add(new Cliente(nome, cpf, email));
+        System.out.print("Telefone: ");
+        String telefone = scanner.nextLine();
+        clientes.add(new Cliente(nome, cpf, email, telefone));
         System.out.println("Cliente cadastrado!");
     }
 
@@ -117,5 +121,9 @@ public class Main {
         pedidos.add(pedido);
         System.out.println("Pedido criado com sucesso!");
         System.out.println(pedido);
+    }
+
+    private static void relatorio(Scanner scanner) {
+        // Necessita classes Service
     }
 }
