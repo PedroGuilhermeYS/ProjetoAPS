@@ -1,9 +1,9 @@
 package servico;
 
+import model.Cliente;
+
 public class NotificadorWhatsApp {
-
-	public NotificadorWhatsApp() {
-		// TODO Auto-generated constructor stub
-	}
-
+    public void notificar(Cliente cliente, String mensagem) {
+        System.out.println("Enviando mensagem no zap para " + cliente.getCpf() + " : " + mensagem);
+    }
 }

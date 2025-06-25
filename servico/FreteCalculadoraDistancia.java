@@ -1,9 +1,9 @@
 package servico;
 
 public class FreteCalculadoraDistancia {
-
-	public FreteCalculadoraDistancia() {
-		// TODO Auto-generated constructor stub
-	}
+    public double calcular(double distanciaKm) {
+        return distanciaKm * 0.50;
+    }
 
 }
+
