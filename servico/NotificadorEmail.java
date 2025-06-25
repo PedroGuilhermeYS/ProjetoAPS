@@ -1,9 +1,9 @@
 package servico;
 
+import model.Cliente;
+
 public class NotificadorEmail {
-
-	public NotificadorEmail() {
-		// TODO Auto-generated constructor stub
-	}
-
+    public void notificar(Cliente cliente, String mensagem) {
+        System.out.println("Enviando em email para " + cliente.getEmail() + " : " + mensagem);
+    }
 }
