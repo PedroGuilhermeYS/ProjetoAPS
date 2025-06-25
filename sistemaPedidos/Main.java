@@ -19,7 +19,7 @@ public class Main {
             System.out.println("1 - Cadastrar Cliente");
             System.out.println("2 - Cadastrar Produto");
             System.out.println("3 - Criar Pedido");
-            System.out.println("4 - Relatorios");
+            System.out.println("4 - Relatórios");
             System.out.println("5 - Sair");
             System.out.print("Escolha: ");
             int opcao = scanner.nextInt();
@@ -124,6 +124,20 @@ public class Main {
     }
 
     private static void relatorio(Scanner scanner) {
+        System.out.println("Qual metodo deseja gerar o relatório?");
+        System.out.println("1- Relatório JSON");
+        System.out.println("2 - Relatório Texto");
+        int relato = scanner.nextInt();
+
+        switch (relato) {
+            case 1:
+                //relatoriojson();
+                break;
+            
+            case 2:
+                //relatorio();
+                break;
+        }
         // Necessita classes Service
     }
 }
