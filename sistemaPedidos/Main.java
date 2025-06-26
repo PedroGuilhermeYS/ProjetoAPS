@@ -1,7 +1,8 @@
 package sistemaPedidos;
 
-//import servico.*; Necessita classes Service
+import relatorio.*;
 import model.*;
+import servico.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +92,7 @@ public class Main {
         Pedido pedido = new Pedido(cliente, frete);
 
         while (true) {
-            System.out.println("Quak produo?:");
+            System.out.println("Qual produo?:");
             for (int i = 0; i < produtos.size(); i++) {
                 System.out.println(i + " - " + produtos.get(i));
             }
@@ -109,35 +110,50 @@ public class Main {
 
         double totalfrete;
         if ("PESO".equalsIgnoreCase(frete)) {
-            totalfrete = 0;
-			//pedido.calcularFretePeso(totalfrete); Necessita classes Service
+            totalfrete = FreteCalculadoraPeso.calcularFretePeso(pedido);
         } else {
             System.out.print("Informe a distância (km): ");
-            totalfrete = scanner.nextDouble();
+            double distancia = scanner.nextDouble();
             scanner.nextLine();
-			//pedido.calcularFreteDistancia(totalfrete); Necessita classes Service
+            totalfrete = FreteCalculadoraDistancia.calcularFreteDistancia(distancia);
         }
 
+        pedido.setValorFrete(totalfrete);
         pedidos.add(pedido);
         System.out.println("Pedido criado com sucesso!");
         System.out.println(pedido);
+
+        //Area de notificações
+        //NotificadorSMS notificador = new NotificadorSMS();
+        //notificador.notificar(cliente);
+
+        //NotificadorWhatsApp notificador = new NotificadorWhatsApp();
+        //notificador.notificar(cliente)
+        NotificadorEmail notificador = new NotificadorEmail();
+        notificador.notificar(cliente);
+
     }
 
     private static void relatorio(Scanner scanner) {
+        Pedido ultimoPedido = pedidos.get(pedidos.size() - 1);
         System.out.println("Qual metodo deseja gerar o relatório?");
         System.out.println("1- Relatório JSON");
         System.out.println("2 - Relatório Texto");
         int relato = scanner.nextInt();
 
         switch (relato) {
-            case 1:
-                //relatoriojson();
-                break;
-            
-            case 2:
-                //relatorio();
-                break;
+        case 1:
+            RelatorioJSON relatoriojson = new RelatorioJSON();
+            String json = relatoriojson.gerarjson(ultimoPedido);
+            System.out.println("$=$=$ relatorio em json $=$=$");
+            System.out.println(json);
+            break;
+
+        case 2:
+            RelatorioTexto relatoriotexto = new RelatorioTexto();
+            System.out.println("$=$=$ Relatorio em texto $=$=$");
+            relatoriotexto.gerartexto(ultimoPedido);
+            break;
         }
-        // Necessita classes Service
     }
 }

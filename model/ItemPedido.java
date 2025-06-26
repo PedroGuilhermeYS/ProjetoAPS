@@ -23,6 +23,6 @@ public class ItemPedido {
 
     @Override
     public String toString() {
-        return produto.getNome() + " (x" + quantidade + ") - R$ " + getSubtotal();
+        return produto.getNome() + quantidade + "x" + " R$" + getSubtotal();
     }
 }

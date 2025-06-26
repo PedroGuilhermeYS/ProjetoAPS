@@ -1,7 +1,7 @@
 package servico;
 
 public class FreteCalculadoraDistancia {
-    public double calcular(double distanciaKm) {
+    public static double calcularFreteDistancia(double distanciaKm) {
         return distanciaKm * 0.50;
     }
 

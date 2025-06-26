@@ -13,20 +13,20 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
     public String getEmail() {
         return email;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public String getTelefone() {
         return telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
     }
 
     @Override
