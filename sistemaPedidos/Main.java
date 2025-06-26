@@ -156,4 +156,22 @@ public class Main {
             break;
         }
     }
+
+    private static void relatorio(Scanner scanner) {
+        System.out.println("Qual metodo deseja gerar o relatório?");
+        System.out.println("1- Relatório JSON");
+        System.out.println("2 - Relatório Texto");
+        int relato = scanner.nextInt();
+
+        switch (relato) {
+            case 1:
+                //relatoriojson();
+                break;
+            
+            case 2:
+                //relatorio();
+                break;
+        }
+        // Necessita classes Service
+    }
 }

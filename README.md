@@ -8,8 +8,6 @@ Ele permite:
 - Simulação do envio de notificações (E-mail, SMS, WhatsApp)
 - Geração de relatórios em texto e JSON (simulado)
 
-> O objetivo é colocar em prática conceitos de orientação a objetos e estruturação de classes sem uso de frameworks externos.
-
 ---
 
 ## 🧑‍💻 Como Compilar e Executar
@@ -45,6 +43,3 @@ Ele permite:
 - 📂 **Arquivo `Entrada.java`**: dificuldade em lembrar a função dele e, depois de muito tempo, perceber que ele poderia ter sido excluído sem prejuízo.
 
 ---
-
-## 📄 Licença
-Este projeto foi desenvolvido apenas para fins educacionais. 
