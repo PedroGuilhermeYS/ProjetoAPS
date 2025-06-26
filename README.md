@@ -8,8 +8,6 @@ Ele permite:
 - Simulação do envio de notificações (E-mail, SMS, WhatsApp)
 - Geração de relatórios em texto e JSON (simulado)
 
-> O objetivo é colocar em prática conceitos de orientação a objetos e estruturação de classes sem uso de frameworks externos.
-
 ---
 
 ## 🧑‍💻 Como Compilar e Executar
