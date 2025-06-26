@@ -12,4 +12,3 @@ public class FreteCalculadoraPeso {
         return pesoTotal * precoPorKg;
     }
 }
-

@@ -43,3 +43,6 @@ Ele permite:
 - 📂 **Arquivo `Entrada.java`**: dificuldade em lembrar a função dele e, depois de muito tempo, perceber que ele poderia ter sido excluído sem prejuízo.
 
 ---
+
+📄 Licença
+Este projeto foi desenvolvido apenas para fins educacionais.
