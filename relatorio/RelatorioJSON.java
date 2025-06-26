@@ -4,25 +4,25 @@ import model.Pedido;
 import model.ItemPedido;
 
 public class RelatorioJSON {
-    public String gerar(Pedido pedido) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("{\n");
-        sb.append("  \"cliente\": \"").append(pedido.getCliente().getNome()).append("\",\n");
-        sb.append("  \"produtos\": [\n");
+    public String gerarjson(Pedido pedido) {
+        StringBuilder stringson = new StringBuilder();
+        stringson.append("{\n");
+        stringson.append("  \"cliente\": \"").append(pedido.getCliente().getNome()).append("\",\n");
+        stringson.append("  \"produtos\": [\n");
         for (int i = 0; i < pedido.getItens().size(); i++) {
             ItemPedido item = pedido.getItens().get(i);
-            sb.append("    {\"nome\": \"").append(item.getProduto().getNome()).append("\", \"quantidade\": ")
+            stringson.append("    {\"nome\": \"").append(item.getProduto().getNome()).append("\", \"quantidade\": ")
                     .append(item.getQuantidade()).append(", \"preco\": ").append(item.getProduto().getPreco()).append("}");
             if (i < pedido.getItens().size() - 1) {
-                sb.append(",");
+                stringson.append(",");
             }
-            sb.append("\n");
+            stringson.append("\n");
         }
-        sb.append("  ],\n");
-        sb.append("  \"total\": ").append(pedido.calcularTotal()).append(",\n");
-		sb.append("  \"frete\": ").append(pedido.getValorFrete()).append(",\n");
-		sb.append("  \"total_com_frete\": ").append(pedido.calcularTotal() + pedido.getValorFrete()).append("\n");
-        sb.append("}");
-        return sb.toString();
+        stringson.append("  ],\n");
+        stringson.append("  \"total\": ").append(pedido.calcularTotal()).append(",\n");
+		stringson.append("  \"frete\": ").append(pedido.getValorFrete()).append(",\n");
+		stringson.append("  \"total_com_frete\": ").append(pedido.calcularTotal() + pedido.getValorFrete()).append("\n");
+        stringson.append("}");
+        return stringson.toString();
     }
 }

@@ -6,21 +6,21 @@ import java.util.List;
 public class Pedido {
     private Cliente cliente;
     private List<ItemPedido> itens;
-    //private String tipoFrete; Necessita classes Service
+    private String tipoFrete; 
     private double valorFrete;
 
     public Pedido(Cliente cliente, String tipoFrete) {
         this.cliente = cliente;
-        //this.tipoFrete = tipoFrete; Necessita classes Service
+        this.tipoFrete = tipoFrete;
         this.itens = new ArrayList<>();
-    }
-
-    public Cliente getCliente() {
-        return cliente;
     }
 
     public List<ItemPedido> getItens() {
         return itens;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
 
     public void adicionarItem(Produto p, int qtd) {
@@ -39,18 +39,20 @@ public class Pedido {
         return valorFrete;
     }
 
+    public void setValorFrete(double valorFrete) {
+        this.valorFrete = valorFrete;
+    }
+
     public double getTotalComFrete() {
         return calcularTotal() + valorFrete;
     }
 
     @Override
     public String toString() {
-        return "Pedido{" +
-                "cliente=" + cliente.getNome() +
-                ", total=" + calcularTotal() +
-                ", frete=" + valorFrete +
-                //", totalComFrete=" + TotalComFrete() + Necessita classes Service
-                '}';
+        return "\nPedido do cliente: " + cliente.getNome() +
+                "\nItens: " + itens +
+                "\nTotal dos produtos: R$" + calcularTotal() +
+                "\nFrete (" + tipoFrete + "): R$" + valorFrete +
+                "\nTOTAL COM FRETE: R$" + getTotalComFrete();
     }
-    
 }
