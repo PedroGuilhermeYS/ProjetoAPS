@@ -41,6 +41,13 @@ Ele permite:
 - 🐛 **Uso do `Scanner`**: algumas leituras precisavam de chamadas duplas a `scanner.nextLine()` para evitar quebras de linha remanescentes.
 - 🧠 **Responsabilidades das classes**: entender claramente o que cada classe deveria fazer e evitar que algo essencial ficasse de fora.
 - 📂 **Arquivo `Entrada.java`**: dificuldade em lembrar a função dele e, depois de muito tempo, perceber que ele poderia ter sido excluído sem prejuízo.
+- ⚠️ **Separar responsabilidade**: Houve dificuldade para separar o que cada membro implementaria no projeto, para que não desse bugs fatais.
+
+---
+
+## 👥 Autores
+- **Pedro** – Estrutura do projeto, execução, lógica de menu e análise final
+- **Carolaine** – Funcionalidades de frete, notificação, relatórios
 
 ---
 
