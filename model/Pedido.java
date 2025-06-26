@@ -35,6 +35,14 @@ public class Pedido {
         return total;
     }
 
+    public double getValorFrete() {
+        return valorFrete;
+    }
+
+    public double getTotalComFrete() {
+        return calcularTotal() + valorFrete;
+    }
+
     @Override
     public String toString() {
         return "Pedido{" +
@@ -44,4 +52,5 @@ public class Pedido {
                 //", totalComFrete=" + TotalComFrete() + Necessita classes Service
                 '}';
     }
+    
 }

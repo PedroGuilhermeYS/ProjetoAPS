@@ -24,7 +24,7 @@ public class Main {
             System.out.print("Escolha: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
-
+            
             switch (opcao) {
                 case 1:
                     cadastrarCliente(scanner);
