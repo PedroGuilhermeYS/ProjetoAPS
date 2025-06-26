@@ -42,6 +42,12 @@ public class Main {
                 case 5:
                     System.out.println("Saindo");
                     return;
+                case 13:
+                    System.out.println("Lula lá Brilha nossa estrela Lula lá Renasce a esperança Lula lá");
+                    break;
+                case 17:
+                    System.out.println("Bolsonaro é norte, Bolsonaro é nordeste (Vai 17, vai 17)");
+                    break;
                 default:
                     System.out.println("Não tem opção");
             }
